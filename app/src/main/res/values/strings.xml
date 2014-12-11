@@ -2,7 +2,14 @@
 <resources>
 
     <string name="app_name">SaludoPersonalizadoAmpliado</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+
+    <!--Definimos los strings que necesitaremos en nuestra pantalla -->
+    <string name="txvSaludo">Saludo Peronalizado</string>
+    <string name="btnBoton">Saludo</string>
+    <string name="showTime"> Mostrar fecha</string>
+    <string name="noNombre"> Falta introducir nombre</string>
+    <string name="saludoSr">Sr</string>
+    <string name="saludoSra">Sra</string>
+
 
 </resources>
