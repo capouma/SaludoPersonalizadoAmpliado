@@ -1,15 +1,101 @@
-<LinearLayout
+
+<!--ScrollView nos sirve para que en caso de que no se vea completa nuestra aplicacion podamos desplazar la pantalla -->
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".Activity1">
+    android:layout_height="match_parent">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context=".Activity1"
+        android:orientation="vertical">
 
-</LinearLayout>
+        //TexView que nos muestra una frase inicial
+        <TextView
+            android:layout_gravity="center"
+            android:text="@string/txvSaludo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        //EditText en el que insertamos el nombre
+        <EditText
+            android:id="@+id/entrada"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="@string/entrada"/>
+
+        //Grupo creado que contiene los dos RadioButtons referentes a Sr y Sra.
+        <RadioGroup
+            android:id="@+id/RadioGroup01"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="@string/saludoSr"
+                android:id="@+id/rdsr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+
+            <RadioButton
+                android:text="@string/saludoSra"
+                android:id="@+id/rdsra"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </RadioButton>
+        </RadioGroup>
+
+        //CheckBox que dependiendo de si esta marcado nos mostrara la fecha o no.
+        <CheckBox
+            android:text="@string/showTime"
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </CheckBox>
+
+        // Se encarga de mostrarnos la hora
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </TimePicker>
+
+        // Se encarga de mostrar el calendario
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </DatePicker>
+
+        // Button usado para mostrar el saludo
+        <Button
+            android:id="@+id/b_saludo"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnBoton"/>
+
+        // TextView que nos mostrara el nombre  el distintivo Sr o Sra y la frase saludo
+        <TextView
+            android:id="@+id/saludo"
+            android:layout_gravity="center"
+            android:text="@string/salida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
