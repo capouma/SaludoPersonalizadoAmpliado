@@ -10,6 +10,8 @@
     <string name="noNombre"> Falta introducir nombre</string>
     <string name="saludoSr">Sr</string>
     <string name="saludoSra">Sra</string>
+    <string name="entrada"></string>
+    <string name="salida"></string>
 
 
 </resources>
