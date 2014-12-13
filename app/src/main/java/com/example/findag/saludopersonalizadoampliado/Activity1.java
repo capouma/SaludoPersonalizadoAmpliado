@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -18,6 +21,12 @@ import android.widget.Toast;
 
 public class Activity1 extends ActionBarActivity
 {
+
+    // Definimos los complementos necesarios para nuestro spinner.
+    TextView lblopcion;
+    Spinner spOpciones;
+    String[] datos;
+    ArrayAdapter<String> adaptador;
 
         // Comienza el onCreate
         @Override
@@ -30,6 +39,37 @@ public class Activity1 extends ActionBarActivity
             final Button btnBoton = (Button) findViewById(R.id.b_saludo);// Es necesario castearlo para poder acceder a todos los metodos de button
             final RadioGroup btnRadio = (RadioGroup) findViewById(R.id.RadioGroup01);
 
+            // Este Array contiene las dos opciones posibles de nuestro Spinner.
+            datos=new String[] {"Hola","Adios"};
+
+            // Creamos un nuevo adaptador que usaremos para mostrar nuestro Array datos
+            adaptador=new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, datos);
+
+            // Recogemos el string de saludo
+            lblopcion=(TextView) findViewById(R.id.saludo);
+
+            // Instanciamos nuestro spinner por su id
+            spOpciones=(Spinner) findViewById(R.id.spinner);
+
+            // Preparamos nuestro adaptador.
+            adaptador.setDropDownViewResource(
+                    android.R.layout.simple_spinner_dropdown_item);
+            spOpciones.setAdapter(adaptador);
+
+            // Definimos un setOnItemSelectedListener con sus metodos y los sobreescribimos. Haciendo que muestre la opcion seleccionada.
+            spOpciones.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+            {
+                @Override
+                public void onItemSelected(AdapterView parent, View v,int position, long id)
+                {
+                    lblopcion.setText("Has seleccionado: "+datos[position]);
+                }
+                @Override
+                public void onNothingSelected(AdapterView arg0)
+                {
+                    lblopcion.setText("ningún dato seleccionado");
+                }
+            });
 
             // Definimos el listener onClick
             btnBoton.setOnClickListener(new View.OnClickListener()
