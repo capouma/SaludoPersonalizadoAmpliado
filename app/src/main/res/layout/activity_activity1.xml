@@ -57,29 +57,6 @@
             </RadioButton>
         </RadioGroup>
 
-        <!--Grupo de RadioButtons creado para referenciar si queremos tener un hola o un adios en el saludo. -->
-        <RadioGroup
-            android:id="@+id/RadioGroup02"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:text="@string/rdbHola"
-                android:id="@+id/rbHola"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </RadioButton>
-
-            <RadioButton
-                android:text="@string/rdbAdios"
-                android:id="@+id/rdbAdios"
-                android:checked="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-            </RadioButton>
-        </RadioGroup>
 
         <!--CheckBox que dependiendo de si esta marcado nos mostrara la fecha o no.-->
         <CheckBox
