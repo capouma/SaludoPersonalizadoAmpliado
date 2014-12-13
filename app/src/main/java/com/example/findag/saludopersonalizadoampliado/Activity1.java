@@ -26,9 +26,12 @@ public class Activity1 extends ActionBarActivity
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_activity1);// Cargamos el layout
 
-            // Definimos un boton
+            // Definimos e instanciamos el boton y el RadioGroup
             final Button btnBoton = (Button) findViewById(R.id.b_saludo);// Es necesario castearlo para poder acceder a todos los metodos de button
             final RadioGroup btnRadio = (RadioGroup) findViewById(R.id.RadioGroup01);
+
+            // Definimos e instanciamos el segundo RadioGroup encargado del saludo.
+            final RadioGroup btnRadio2 = (RadioGroup) findViewById(R.id.RadioGroup02);
 
 
             // Definimos el listener onClick
@@ -38,8 +41,14 @@ public class Activity1 extends ActionBarActivity
                 public void onClick(View v)
                 {
 
+                    // Recogemos la string de saludoSr y saludoSra.
                     String sr = getResources().getString(R.string.saludoSr);
                     String sra = getResources().getString(R.string.saludoSra);
+
+                    // Recogemos la string de rdbHola y rdbAdios
+                    String saludoHola = getResources().getString(R.string.rdbHola);
+                    String saludoAdios = getResources().getString(R.string.rdbAdios);
+
                     TextView textoEntrada = (TextView) findViewById(R.id.entrada);
 
                     // MUestra un aviso temporal
@@ -66,7 +75,18 @@ public class Activity1 extends ActionBarActivity
 
                         }
 
-                        textoSalida.setText("Buenos dias " + srSra + " " + textoEntrada.getText());
+                        //Definimos una variable String que dependiendo del RadioButton marcado contendra hola o adios.
+                        String saludo;
+                        if(btnRadio2.getCheckedRadioButtonId() == R.id.rbHola)
+                        {
+                            saludo = saludoHola;
+                        }
+                        else
+                        {
+                            saludo = saludoAdios;
+                        }
+
+                        textoSalida.setText(saludo + " " + srSra + " " + textoEntrada.getText());
 
                         // Obtenemos Fecha y Hora
                         CheckBox timeCheckBox = (CheckBox) findViewById(R.id.checkBox);
@@ -77,7 +97,7 @@ public class Activity1 extends ActionBarActivity
                             String muestraFecha = fecha.getDayOfMonth() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getYear();
                             TimePicker hora = (TimePicker) findViewById(R.id.timePicker);
                             muestraFecha += " " + hora.getCurrentHour() + ":" + hora.getCurrentMinute();
-                            textoSalida.setText(" " + srSra + " " + textoEntrada.getText() + " Hoy es " + muestraFecha);
+                            textoSalida.setText(saludo + " " + srSra + " " + textoEntrada.getText() + " Hoy es " + muestraFecha);
                         }
                     }
 
