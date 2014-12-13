@@ -13,5 +13,9 @@
     <string name="entrada"></string>
     <string name="salida"></string>
 
+    <!--Definimos dos string para los nuevos RadioButtons -->
+    <string name="rdbHola">Hola</string>
+    <string name="rbdAdios">Adios</string>
+
 
 </resources>
