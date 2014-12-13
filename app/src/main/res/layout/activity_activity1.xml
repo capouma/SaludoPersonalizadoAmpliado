@@ -18,14 +18,14 @@
         tools:context=".Activity1"
         android:orientation="vertical">
 
-        //TexView que nos muestra una frase inicial
+        <!--TexView que nos muestra una frase inicial-->
         <TextView
             android:layout_gravity="center"
             android:text="@string/txvSaludo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        //EditText en el que insertamos el nombre
+        <!--EditText en el que insertamos el nombre-->
         <EditText
             android:id="@+id/entrada"
             android:layout_gravity="center"
@@ -33,7 +33,7 @@
             android:layout_width="fill_parent"
             android:text="@string/entrada"/>
 
-        //Grupo creado que contiene los dos RadioButtons referentes a Sr y Sra.
+        <!--Grupo creado que contiene los dos RadioButtons referentes a Sr y Sra.-->
         <RadioGroup
             android:id="@+id/RadioGroup01"
             android:layout_height="wrap_content"
@@ -57,7 +57,31 @@
             </RadioButton>
         </RadioGroup>
 
-        //CheckBox que dependiendo de si esta marcado nos mostrara la fecha o no.
+        <!--Grupo de RadioButtons creado para referenciar si queremos tener un hola o un adios en el saludo. -->
+        <RadioGroup
+            android:id="@+id/RadioGroup02"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:text="@string/rdbHola"
+                android:id="@+id/rbHola"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </RadioButton>
+
+            <RadioButton
+                android:text="@string/rbdAdios"
+                android:id="@+id/rbAdios"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </RadioButton>
+        </RadioGroup>
+
+        <!--CheckBox que dependiendo de si esta marcado nos mostrara la fecha o no.-->
         <CheckBox
             android:text="@string/showTime"
             android:id="@+id/checkBox"
@@ -65,7 +89,7 @@
             android:layout_height="wrap_content">
         </CheckBox>
 
-        // Se encarga de mostrarnos la hora
+        <!-- Se encarga de mostrarnos la hora-->
         <TimePicker
             android:id="@+id/timePicker"
             android:layout_width="wrap_content"
@@ -73,7 +97,7 @@
             android:visibility="gone">
         </TimePicker>
 
-        // Se encarga de mostrar el calendario
+        <!-- Se encarga de mostrar el calendario-->
         <DatePicker
             android:id="@+id/datePicker"
             android:layout_width="wrap_content"
@@ -81,7 +105,7 @@
             android:visibility="gone">
         </DatePicker>
 
-        // Button usado para mostrar el saludo
+        <!-- Button usado para mostrar el saludo-->
         <Button
             android:id="@+id/b_saludo"
             android:layout_gravity="center"
@@ -89,7 +113,7 @@
             android:layout_height="wrap_content"
             android:text="@string/btnBoton"/>
 
-        // TextView que nos mostrara el nombre  el distintivo Sr o Sra y la frase saludo
+        <!-- TextView que nos mostrara el nombre  el distintivo Sr o Sra y la frase saludo-->
         <TextView
             android:id="@+id/saludo"
             android:layout_gravity="center"
