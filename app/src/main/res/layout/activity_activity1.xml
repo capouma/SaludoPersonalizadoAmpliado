@@ -59,7 +59,6 @@
 
         <!-- Spinner que nos dara la opcion de elegir entre Hola o Adios-->
         <Spinner
-
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
